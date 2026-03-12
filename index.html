@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>어깨 복합체(Shoulder Complex) 해부학 정리</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #2c5f8a;
+      --primary-light: #e8f1f8;
+      --secondary: #3a7d5e;
+      --secondary-light: #e8f5ee;
+      --accent: #c0392b;
+      --accent-light: #fdf0ef;
+      --warning: #d97706;
+      --warning-light: #fef3c7;
+      --purple: #6b46c1;
+      --purple-light: #f3eeff;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --border-radius: 8px;
+      --shadow: 0 2px 8px rgba(0,0,0,0.1);
+      --font: 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--gray-800);
+      background: #f5f7fa;
+    }
+
+    /* ===== LAYOUT ===== */
+    .page-wrapper { max-width: 960px; margin: 0 auto; padding: 0 16px 60px; }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      background: linear-gradient(135deg, var(--primary) 0%, #1a4060 100%);
+      color: #fff;
+      padding: 36px 24px 28px;
+      text-align: center;
+    }
+    .site-header h1 { font-size: clamp(1.4rem, 4vw, 2rem); font-weight: 800; letter-spacing: -0.5px; }
+    .site-header .subtitle { margin-top: 8px; font-size: 0.9rem; opacity: 0.85; line-height: 1.6; }
+    .site-header .badges { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .badge {
+      display: inline-block; background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 20px; padding: 3px 12px; font-size: 0.78rem;
+    }
+
+    /* ===== NAV ===== */
+    nav.toc {
+      background: #fff;
+      border-bottom: 3px solid var(--primary);
+      padding: 16px 20px;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    }
+    nav.toc .toc-title { font-size: 0.75rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 700; }
+    nav.toc ol {
+      display: flex; flex-wrap: wrap; gap: 4px 8px;
+      list-style: none; padding: 0;
+    }
+    nav.toc ol li a {
+      display: inline-block;
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid var(--primary-light);
+      background: var(--primary-light);
+      white-space: nowrap;
+      transition: background 0.15s, color 0.15s;
+    }
+    nav.toc ol li a:hover { background: var(--primary); color: #fff; }
+
+    /* ===== MAIN CONTENT ===== */
+    main { margin-top: 28px; }
+
+    /* ===== SECTION ===== */
+    section {
+      background: #fff;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+      overflow: hidden;
+    }
+    .section-header {
+      background: var(--primary);
+      color: #fff;
+      padding: 14px 22px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-header .sec-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px;
+      background: rgba(255,255,255,0.25);
+      border-radius: 50%;
+      font-size: 0.8rem; font-weight: 800;
+      flex-shrink: 0;
+    }
+    .section-header h2 { font-size: 1rem; font-weight: 700; }
+    .section-header .eng { font-size: 0.78rem; opacity: 0.8; font-weight: 400; margin-top: 2px; }
+    .section-body { padding: 22px; }
+
+    /* ===== SUBSECTION ===== */
+    .subsection { margin-bottom: 24px; }
+    .subsection:last-child { margin-bottom: 0; }
+    .subsection-title {
+      font-size: 0.95rem; font-weight: 700;
+      color: var(--primary);
+      border-left: 4px solid var(--primary);
+      padding-left: 10px;
+      margin-bottom: 12px;
+    }
+
+    /* ===== TABLE ===== */
+    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 6px; }
+    table {
+      width: 100%; border-collapse: collapse; min-width: 420px;
+      font-size: 0.88rem;
+    }
+    thead tr { background: var(--primary); color: #fff; }
+    thead th { padding: 10px 14px; text-align: left; font-weight: 700; white-space: nowrap; }
+    tbody tr:nth-child(even) { background: var(--gray-50); }
+    tbody tr:hover { background: var(--primary-light); }
+    tbody td { padding: 9px 14px; vertical-align: top; border-bottom: 1px solid var(--gray-200); }
+    tbody td:first-child { font-weight: 600; color: var(--primary); white-space: nowrap; }
+    .tag-old { color: var(--gray-600); font-size: 0.82rem; }
+    .tag-eng { color: var(--secondary); font-size: 0.82rem; font-style: italic; }
+
+    /* ===== BOXES ===== */
+    .box {
+      border-radius: 8px; padding: 16px 18px; margin: 14px 0;
+    }
+    .box-key {
+      background: var(--primary-light);
+      border-left: 5px solid var(--primary);
+    }
+    .box-exam {
+      background: var(--accent-light);
+      border-left: 5px solid var(--accent);
+    }
+    .box-warn {
+      background: var(--warning-light);
+      border-left: 5px solid var(--warning);
+    }
+    .box-green {
+      background: var(--secondary-light);
+      border-left: 5px solid var(--secondary);
+    }
+    .box-purple {
+      background: var(--purple-light);
+      border-left: 5px solid var(--purple);
+    }
+    .box-label {
+      font-size: 0.72rem; font-weight: 800; letter-spacing: 1px;
+      text-transform: uppercase; margin-bottom: 8px;
+    }
+    .box-key .box-label { color: var(--primary); }
+    .box-exam .box-label { color: var(--accent); }
+    .box-warn .box-label { color: var(--warning); }
+    .box-green .box-label { color: var(--secondary); }
+    .box-purple .box-label { color: var(--purple); }
+    .box p, .box ul, .box ol { font-size: 0.9rem; }
+    .box ul, .box ol { padding-left: 18px; }
+    .box li { margin-bottom: 4px; }
+    .box strong { font-weight: 700; }
+
+    /* ===== CARD GRID ===== */
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; margin: 12px 0; }
+    .card {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px; padding: 14px;
+      border-top: 4px solid var(--primary);
+    }
+    .card .card-title { font-weight: 700; font-size: 0.9rem; color: var(--primary); margin-bottom: 4px; }
+    .card .card-old { font-size: 0.78rem; color: var(--gray-600); }
+    .card .card-eng { font-size: 0.78rem; color: var(--secondary); font-style: italic; margin-bottom: 6px; }
+    .card .card-desc { font-size: 0.82rem; color: var(--gray-700); line-height: 1.5; }
+
+    /* ===== STEP FLOW ===== */
+    .step-flow {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+      margin: 14px 0; background: var(--gray-50);
+      padding: 16px; border-radius: 8px; border: 1px solid var(--gray-200);
+    }
+    .step-item {
+      background: var(--primary);
+      color: #fff; padding: 7px 14px;
+      border-radius: 6px; font-size: 0.85rem; font-weight: 600;
+    }
+    .step-arrow { color: var(--primary); font-size: 1.2rem; font-weight: 700; }
+
+    /* ===== COMPARE TABLE ===== */
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin: 12px 0; }
+    @media(max-width: 500px) { .compare-grid { grid-template-columns: 1fr; } }
+    .compare-cell {
+      background: var(--gray-50); border: 1px solid var(--gray-200);
+      border-radius: 6px; padding: 10px 12px; font-size: 0.85rem; text-align: center;
+    }
+    .compare-cell .cmp-kr { font-weight: 700; color: var(--primary); font-size: 0.9rem; }
+    .compare-cell .cmp-old { color: var(--gray-600); font-size: 0.78rem; }
+    .compare-cell .cmp-eng { color: var(--secondary); font-style: italic; font-size: 0.8rem; }
+    .compare-eq { display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: var(--gray-300); }
+
+    /* ===== DETAILS/SUMMARY ===== */
+    details { border: 1px solid var(--gray-200); border-radius: 8px; margin: 10px 0; overflow: hidden; }
+    summary {
+      background: var(--gray-100); padding: 11px 16px;
+      font-weight: 700; font-size: 0.9rem; cursor: pointer;
+      color: var(--primary); list-style: none;
+      display: flex; align-items: center; gap: 8px;
+    }
+    summary::before { content: '▶'; font-size: 0.7rem; transition: transform 0.2s; }
+    details[open] summary::before { transform: rotate(90deg); }
+    details .details-body { padding: 16px; background: #fff; }
+
+    /* ===== CHECKLIST ===== */
+    .checklist { list-style: none; padding: 0; }
+    .checklist li {
+      display: flex; align-items: flex-start; gap: 8px;
+      padding: 5px 0; border-bottom: 1px solid var(--gray-100);
+      font-size: 0.88rem;
+    }
+    .checklist li::before {
+      content: '□'; color: var(--primary); font-size: 1rem;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .checklist li .ck-kr { font-weight: 600; color: var(--gray-800); }
+    .checklist li .ck-old { color: var(--gray-600); font-size: 0.8rem; }
+    .checklist li .ck-eng { color: var(--secondary); font-size: 0.8rem; font-style: italic; }
+
+    /* ===== SUMMARY MEGA CARD ===== */
+    .mega-card {
+      background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+      border: 2px solid var(--primary);
+      border-radius: 12px; padding: 22px;
+    }
+    .mega-card h3 { font-size: 1rem; color: var(--primary); font-weight: 800; margin-bottom: 14px; border-bottom: 2px solid var(--primary); padding-bottom: 8px; }
+    .mega-card ul { padding-left: 18px; }
+    .mega-card ul li { margin-bottom: 7px; font-size: 0.9rem; }
+
+    /* ===== FOSSA COMPARISON ===== */
+    .fossa-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+    @media(max-width: 480px) { .fossa-wrap { grid-template-columns: 1fr; } }
+    .fossa-card {
+      border-radius: 8px; padding: 14px;
+    }
+    .fossa-card.front { background: var(--primary-light); border: 2px solid var(--primary); }
+    .fossa-card.back { background: var(--secondary-light); border: 2px solid var(--secondary); }
+    .fossa-card .fc-title { font-weight: 800; font-size: 0.85rem; margin-bottom: 8px; }
+    .fossa-card.front .fc-title { color: var(--primary); }
+    .fossa-card.back .fc-title { color: var(--secondary); }
+    .fossa-card ul { padding-left: 16px; font-size: 0.84rem; }
+    .fossa-card ul li { margin-bottom: 5px; }
+
+    /* ===== MUSCLE TABLE ===== */
+    .muscle-block { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; padding: 16px; margin: 12px 0; }
+    .muscle-block h4 { font-size: 0.95rem; font-weight: 700; color: var(--primary); margin-bottom: 10px; border-bottom: 1px solid var(--gray-200); padding-bottom: 6px; }
+    .muscle-row { display: flex; gap: 8px; margin-bottom: 8px; align-items: baseline; }
+    .muscle-label { font-size: 0.78rem; font-weight: 700; color: var(--gray-600); min-width: 48px; }
+    .muscle-val { font-size: 0.88rem; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--gray-800); color: var(--gray-300);
+      text-align: center; padding: 18px;
+      font-size: 0.78rem; margin-top: 20px;
+    }
+
+    /* ===== UTILITY ===== */
+    .mt-10 { margin-top: 10px; }
+    .mt-16 { margin-top: 16px; }
+    .text-small { font-size: 0.83rem; color: var(--gray-600); }
+    .highlight { background: #fffde7; padding: 1px 4px; border-radius: 3px; font-weight: 600; }
+    p.desc { font-size: 0.9rem; color: var(--gray-700); margin-bottom: 12px; line-height: 1.75; }
+
+    /* ===== PRINT ===== */
+    @media print {
+      body { background: #fff; font-size: 11pt; }
+      nav.toc { position: static; box-shadow: none; }
+      section { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
+      .site-header { background: #2c5f8a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .section-header { background: #2c5f8a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .box-key { background: #e8f1f8 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .box-exam { background: #fdf0ef !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .box-warn { background: #fef3c7 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .box-green { background: #e8f5ee !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      thead tr { background: #2c5f8a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      details { display: block; }
+      details .details-body { display: block; }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width: 640px) {
+      .section-body { padding: 16px 14px; }
+      .card-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+      .step-flow { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="page-wrapper" style="padding-top:0;padding-bottom:0;">
+    <h1>어깨 복합체(Shoulder Complex) 해부학 정리</h1>
+    <p class="subtitle">
+      한국어 해부학 학습 노트<br>
+      신용어 · 구용어 · 영어 통합 / 재활 · 운동학 기초
+    </p>
+    <div class="badges">
+      <span class="badge">재활 기초</span>
+      <span class="badge">운동학</span>
+      <span class="badge">해부학 수업</span>
+      <span class="badge">시험 대비</span>
+      <span class="badge">신/구용어 통합</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="목차">
+  <div class="page-wrapper" style="padding-top:0;padding-bottom:0;">
+    <div class="toc-title">목차 (빠른 이동)</div>
+    <ol>
+      <li><a href="#s1">1. 개요</a></li>
+      <li><a href="#s2">2. 뼈 구성</a></li>
+      <li><a href="#s3">3. 관절</a></li>
+      <li><a href="#s4">4. 4개냐 5개냐</a></li>
+      <li><a href="#s5">5. 복장뼈</a></li>
+      <li><a href="#s6">6. 빗장뼈</a></li>
+      <li><a href="#s7">7. 갈비뼈</a></li>
+      <li><a href="#s8">8. 근육</a></li>
+      <li><a href="#s9">9. 견갑골</a></li>
+      <li><a href="#s10">10. 촉진</a></li>
+      <li><a href="#s11">11. 핵심 요약</a></li>
+      <li><a href="#s12">12. 시험 대비</a></li>
+    </ol>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+<main>
+
+  <!-- ===== SECTION 1 ===== -->
+  <section id="s1">
+    <div class="section-header">
+      <span class="sec-num">1</span>
+      <div>
+        <h2>어깨 복합체 개요</h2>
+        <div class="eng">Shoulder Complex Overview</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="desc">
+        어깨는 하나의 관절이 아니라 <strong>여러 관절이 함께 작용하는 복합 구조</strong>이다.
+        이 구조를 <strong>어깨 복합체(Shoulder Complex)</strong>라고 하며, 인체에서 가장 넓은 운동 범위를 가지는 관절 복합체 중 하나이다.
+      </p>
+      <p class="desc">
+        어깨 복합체는 일반적으로 <strong>4개의 관절</strong>로 설명된다. 일부 자료에서는 <strong>견봉하 공간(Subacromial space)</strong>을
+        별도의 기능적 관절로 포함하여 5개로 설명하기도 한다.
+      </p>
+
+      <div class="box box-key">
+        <div class="box-label">핵심 요약</div>
+        <p><strong>Shoulder Complex = 4 joints</strong><br>
+        <span class="text-small">(+ 경우에 따라 Subacromial space 포함 시 5개)</span></p>
+        <ul class="mt-10">
+          <li>복장빗장관절 (SC joint)</li>
+          <li>봉우리빗장관절 (AC joint)</li>
+          <li>어깨가슴관절 (ST joint)</li>
+          <li>오목위팔관절 (GH joint)</li>
+        </ul>
+      </div>
+
+      <div class="box box-green mt-10">
+        <div class="box-label">왜 복합체(Complex)라고 하는가?</div>
+        <p>각 관절이 독립적으로 움직이는 것이 아니라, 팔을 들어 올릴 때 SC joint, AC joint, ST joint, GH joint가 <strong>동시에 협력</strong>하여 작동하기 때문이다.
+        이를 <span class="highlight">어깨리듬(Scapulohumeral Rhythm)</span>이라고도 한다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 2 ===== -->
+  <section id="s2">
+    <div class="section-header">
+      <span class="sec-num">2</span>
+      <div>
+        <h2>어깨를 이루는 뼈</h2>
+        <div class="eng">Bones of the Shoulder Complex</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="desc">어깨 복합체는 아래 5개의 뼈로 구성된다.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>신용어 (현행)</th>
+              <th>구용어 (과거)</th>
+              <th>영어</th>
+              <th>간단 설명</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>복장뼈</td>
+              <td class="tag-old">흉골</td>
+              <td class="tag-eng">Sternum</td>
+              <td>몸통 앞쪽 중앙의 납작한 뼈. 갈비연골과 연결</td>
+            </tr>
+            <tr>
+              <td>빗장뼈</td>
+              <td class="tag-old">쇄골</td>
+              <td class="tag-eng">Clavicle</td>
+              <td>S자 모양의 긴 뼈. 상지와 몸통을 연결</td>
+            </tr>
+            <tr>
+              <td>어깨뼈</td>
+              <td class="tag-old">견갑골</td>
+              <td class="tag-eng">Scapula</td>
+              <td>어깨 뒤쪽의 삼각형 편평골. 갈비뼈 위에서 움직임</td>
+            </tr>
+            <tr>
+              <td>위팔뼈</td>
+              <td class="tag-old">상완골</td>
+              <td class="tag-eng">Humerus</td>
+              <td>위팔의 긴 뼈. GH joint를 이루는 핵심 뼈</td>
+            </tr>
+            <tr>
+              <td>갈비뼈</td>
+              <td class="tag-old">늑골</td>
+              <td class="tag-eng">Rib</td>
+              <td>흉곽을 이루는 곡선형 뼈. 12쌍으로 구성</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 3 ===== -->
+  <section id="s3">
+    <div class="section-header">
+      <span class="sec-num">3</span>
+      <div>
+        <h2>어깨 복합체의 관절</h2>
+        <div class="eng">Joints of the Shoulder Complex</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>신용어</th>
+              <th>구용어</th>
+              <th>영어</th>
+              <th>특징</th>
+              <th>역할</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>복장빗장관절</td>
+              <td class="tag-old">흉쇄관절</td>
+              <td class="tag-eng">Sternoclavicular Joint<br>(SC joint)</td>
+              <td>
+                · 어깨와 몸통을 연결하는 <strong>유일한 뼈 관절</strong><br>
+                · 안장관절(saddle joint)<br>
+                · 관절원반(articular disc) 존재
+              </td>
+              <td>
+                · 쇄골 움직임의 시작점<br>
+                · 어깨-몸통 연결
+              </td>
+            </tr>
+            <tr>
+              <td>봉우리빗장관절</td>
+              <td class="tag-old">견봉쇄골관절</td>
+              <td class="tag-eng">Acromioclavicular Joint<br>(AC joint)</td>
+              <td>
+                · 빗장뼈 가쪽 끝과 봉우리가 만나는 관절<br>
+                · 평면관절(plane joint)
+              </td>
+              <td>
+                · 견갑골 움직임 조절<br>
+                · 상지 거상 시 협력
+              </td>
+            </tr>
+            <tr>
+              <td>어깨가슴관절</td>
+              <td class="tag-old">견갑흉곽관절</td>
+              <td class="tag-eng">Scapulothoracic Joint<br>(ST joint)</td>
+              <td>
+                · <strong>실제 해부학적 관절이 아닌 기능적 관절</strong><br>
+                · 견갑골이 갈비뼈 위에서 미끄러짐
+              </td>
+              <td>
+                · 어깨 움직임 효율성 증가<br>
+                · 견갑골 안정성과 연관
+              </td>
+            </tr>
+            <tr>
+              <td>오목위팔관절</td>
+              <td class="tag-old">견관절</td>
+              <td class="tag-eng">Glenohumeral Joint<br>(GH joint)</td>
+              <td>
+                · 일반적으로 말하는 <strong>어깨관절</strong><br>
+                · 볼-소켓 관절(ball-and-socket)<br>
+                · 움직임 범위가 매우 큼
+              </td>
+              <td>
+                · 굽힘, 폄, 벌림, 모음<br>
+                · 안쪽돌림, 가쪽돌림
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-16">
+        <div class="subsection-title">헷갈리기 쉬운 용어 비교표</div>
+        <div style="display:grid; grid-template-columns:1fr; gap:8px;">
+
+          <div style="display:flex; flex-wrap:wrap; gap:6px; align-items:center; background:var(--gray-50); border:1px solid var(--gray-200); border-radius:8px; padding:12px 14px;">
+            <span style="background:var(--primary);color:#fff;padding:4px 10px;border-radius:5px;font-size:0.82rem;font-weight:700;">복장빗장관절</span>
+            <span style="color:var(--gray-500);font-size:0.9rem;">=</span>
+            <span style="background:var(--gray-200);color:var(--gray-700);padding:4px 10px;border-radius:5px;font-size:0.82rem;font-weight:700;">흉쇄관절</span>
+            <span style="color:var(--gray-500);font-size:0.9rem;">=</span>
+            <span style="background:var(--secondary-light);color:var(--secondary);padding:4px 10px;border-radius:5px;font-size:0.82rem;font-weight:700;font-style:italic;">SC joint</span>
+          </div>
+
+          <div style="display:flex; flex-wrap:wrap; gap:6px; align-items:center; background:var(--gray-50); border:1px solid var(--gray-200); border-radius:8px; padding:12px 14px;">
+            <span style="background:var(--primary);color:#fff;padding:4px 10px;border-radius:5px;font-size:0.82rem;font-weight:700;">봉우리빗장관절</span>
+            <span style="color:var(--gray-500);font-size:0.9rem;">=</span>
+            <span style="background:var(--gray-200);color:var(--gray-700);padding:4px 10px;border-radius:5px;font-size:0.82rem;font-weight:700;">견봉쇄골관절</span>
+            <span style="color:var(--gray-500);font-size:0.9rem;">=</span>
+            <span style="background:var(--secondary-light);color:var(--secondary);padding:4px 10px;border-radius:5px;font-size:0.82rem;font-weight:700;font-style:italic;">AC joint</span>
+          </div>
+
+          <div style="display:flex; flex-wrap:wrap; gap:6px; align-items:center; background:var(--gray-50); border:1px solid var(--gray-200); border-radius:8px; padding:12px 14px;">
+            <span style="background:var(--primary);color:#fff;padding:4px 10px;border-radius:5px;font-size:0.82rem;font-weight:700;">어깨가슴관절</span>
+            <span style="color:var(--gray-500);font-size:0.9rem;">=</span>
+            <span style="background:var(--gray-200);color:var(--gray-700);padding:4px 10px;border-radius:5px;font-size:0.82rem;font-weight:700;">견갑흉곽관절</span>
+            <span style="color:var(--gray-500);font-size:0.9rem;">=</span>
+            <span style="background:var(--secondary-light);color:var(--secondary);padding:4px 10px;border-radius:5px;font-size:0.82rem;font-weight:700;font-style:italic;">ST joint</span>
+          </div>
+
+          <div style="display:flex; flex-wrap:wrap; gap:6px; align-items:center; background:var(--gray-50); border:1px solid var(--gray-200); border-radius:8px; padding:12px 14px;">
+            <span style="background:var(--primary);color:#fff;padding:4px 10px;border-radius:5px;font-size:0.82rem;font-weight:700;">오목위팔관절</span>
+            <span style="color:var(--gray-500);font-size:0.9rem;">=</span>
+            <span style="background:var(--gray-200);color:var(--gray-700);padding:4px 10px;border-radius:5px;font-size:0.82rem;font-weight:700;">견관절</span>
+            <span style="color:var(--gray-500);font-size:0.9rem;">=</span>
+            <span style="background:var(--secondary-light);color:var(--secondary);padding:4px 10px;border-radius:5px;font-size:0.82rem;font-weight:700;font-style:italic;">GH joint</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 4 ===== -->
+  <section id="s4">
+    <div class="section-header">
+      <span class="sec-num">4</span>
+      <div>
+        <h2>4개냐 5개냐 정리</h2>
+        <div class="eng">4 joints or 5 joints?</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="box box-warn">
+        <div class="box-label">주의 · 헷갈리기 쉬운 개념</div>
+        <ul>
+          <li>가장 <strong>일반적인 기준은 4개 관절</strong> (SC, AC, ST, GH)</li>
+          <li>일부 자료에서는 <strong>견봉하 공간(Subacromial space / Subacromial articulation)</strong>을 포함하여 <strong>5개</strong>로 설명</li>
+          <li>Subacromial space는 봉우리 아래쪽 공간으로, 위팔뼈 머리와 봉우리 사이에 존재</li>
+          <li>이 공간에는 가시위근(극상근, supraspinatus), 점액낭(bursa) 등이 위치함</li>
+          <li><strong>시험에서는 교수자 또는 교재의 기준을 따르는 것이 안전</strong></li>
+        </ul>
+      </div>
+      <div class="box box-key mt-10">
+        <div class="box-label">암기 문장</div>
+        <p style="font-size:1rem; font-weight:700; color:var(--primary);">
+          "Shoulder complex = 4 joints + (경우에 따라) Subacromial space"
+        </p>
+      </div>
+
+      <div class="table-wrap mt-16">
+        <table>
+          <thead>
+            <tr><th>구분</th><th>관절 수</th><th>포함 관절</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>일반 기준</td>
+              <td><strong>4개</strong></td>
+              <td>SC, AC, ST, GH</td>
+            </tr>
+            <tr>
+              <td>확장 기준</td>
+              <td><strong>5개</strong></td>
+              <td>SC, AC, ST, GH + Subacromial space</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 5 ===== -->
+  <section id="s5">
+    <div class="section-header">
+      <span class="sec-num">5</span>
+      <div>
+        <h2>복장뼈의 골학적 외형</h2>
+        <div class="eng">Osteological Features of Sternum</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="desc">복장뼈(흉골, Sternum)는 몸통 앞쪽 중앙에 위치하는 납작한 뼈로, <strong>3부분</strong>으로 구성된다.</p>
+
+      <div class="subsection-title">복장뼈 3부분</div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-title">복장뼈 자루</div>
+          <div class="card-old">구용어: 흉골병</div>
+          <div class="card-eng">Manubrium</div>
+          <div class="card-desc">복장뼈의 가장 위쪽 부분. SC joint를 형성. 주요 구조물이 가장 많음</div>
+        </div>
+        <div class="card">
+          <div class="card-title">복장뼈 몸통</div>
+          <div class="card-old">구용어: 흉골체</div>
+          <div class="card-eng">Body</div>
+          <div class="card-desc">복장뼈의 가장 긴 중앙 부분. 갈비뼈와 연결되는 늑골패임 다수 존재</div>
+        </div>
+        <div class="card">
+          <div class="card-title">칼돌기</div>
+          <div class="card-old">구용어: 검상돌기</div>
+          <div class="card-eng">Xiphoid process</div>
+          <div class="card-desc">복장뼈 가장 아래쪽의 작은 돌기. 연골로 이루어진 경우가 많음</div>
+        </div>
+      </div>
+
+      <div class="subsection-title mt-16">Manubrium의 주요 구조</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>신용어</th>
+              <th>구용어</th>
+              <th>영어</th>
+              <th>설명</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>빗장관절면</td>
+              <td class="tag-old">쇄골패임</td>
+              <td class="tag-eng">Clavicular facet</td>
+              <td>빗장뼈와 연결되어 <strong>복장빗장관절(SC joint)</strong> 형성</td>
+            </tr>
+            <tr>
+              <td>목아래패임</td>
+              <td class="tag-old">경정맥패임</td>
+              <td class="tag-eng">Jugular notch</td>
+              <td>복장뼈 위쪽 중앙의 패인 부분. 목 앞쪽에서 촉진 가능</td>
+            </tr>
+            <tr>
+              <td>갈비관절면</td>
+              <td class="tag-old">늑골패임</td>
+              <td class="tag-eng">Costal facet</td>
+              <td>갈비뼈 또는 늑연골과 연결되는 관절면</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box-exam mt-10">
+        <div class="box-label">시험 포인트</div>
+        <p><strong>Sternum = Manubrium + Body + Xiphoid process</strong></p>
+        <p class="mt-10" style="font-size:0.85rem;">SC joint(복장빗장관절)를 형성하는 뼈 = <span class="highlight">복장뼈 자루(Manubrium)</span> + <span class="highlight">빗장뼈 복장끝(Sternal end)</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 6 ===== -->
+  <section id="s6">
+    <div class="section-header">
+      <span class="sec-num">6</span>
+      <div>
+        <h2>빗장뼈의 골학적 외형</h2>
+        <div class="eng">Osteological Features of Clavicle</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="desc">빗장뼈(쇄골, Clavicle)는 <strong>S자 모양의 긴 뼈</strong>로, 상지와 몸통을 연결하는 유일한 뼈다리 역할을 한다.</p>
+
+      <div class="subsection-title">빗장뼈 3부분</div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-title">복장끝</div>
+          <div class="card-old">구용어: 흉골끝</div>
+          <div class="card-eng">Sternal end</div>
+          <div class="card-desc">안쪽(내측) 끝. 복장뼈와 연결되어 SC joint 형성</div>
+        </div>
+        <div class="card">
+          <div class="card-title">몸통</div>
+          <div class="card-old">구용어: 체부</div>
+          <div class="card-eng">Shaft</div>
+          <div class="card-desc">S자 모양의 중간 부분</div>
+        </div>
+        <div class="card">
+          <div class="card-title">봉우리끝</div>
+          <div class="card-old">구용어: 견봉끝</div>
+          <div class="card-eng">Acromial end</div>
+          <div class="card-desc">가쪽(외측) 끝. 봉우리와 연결되어 AC joint 형성</div>
+        </div>
+      </div>
+
+      <div class="subsection-title mt-16">주요 구조</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>신용어</th>
+              <th>구용어</th>
+              <th>영어</th>
+              <th>설명</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>원뿔결절</td>
+              <td class="tag-old">원추결절</td>
+              <td class="tag-eng">Conoid tubercle</td>
+              <td>원뿔인대(coracoclavicular ligament 중 conoid부) 부착</td>
+            </tr>
+            <tr>
+              <td>사다리꼴선</td>
+              <td class="tag-old">사다리꼴선</td>
+              <td class="tag-eng">Trapezoid line</td>
+              <td>사다리꼴인대(trapezoid ligament) 부착</td>
+            </tr>
+            <tr>
+              <td>갈비거친면<br><span class="text-small">(갈비결절)</span></td>
+              <td class="tag-old">갈비결절</td>
+              <td class="tag-eng">Costal tuberosity</td>
+              <td>늑쇄인대(costoclavicular ligament) 부착</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box-exam mt-10">
+        <div class="box-label">시험 포인트</div>
+        <p><strong>Clavicle = Sternal end + Shaft + Acromial end</strong></p>
+        <ul class="mt-10" style="font-size:0.85rem;">
+          <li>Sternal end → SC joint (복장뼈와 연결)</li>
+          <li>Acromial end → AC joint (봉우리와 연결)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 7 ===== -->
+  <section id="s7">
+    <div class="section-header">
+      <span class="sec-num">7</span>
+      <div>
+        <h2>갈비뼈의 형태와 기능</h2>
+        <div class="eng">Morphology and Function of Ribs</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="desc">갈비뼈(늑골, Rib)는 <strong>심장을 중심으로 곡선을 이루는 구조</strong>이다. 12쌍으로 구성되며, 흉곽(thoracic cage)을 형성한다.</p>
+
+      <div class="subsection-title">형태</div>
+      <div class="box box-green">
+        <div class="box-label">형태 특징</div>
+        <ul>
+          <li>뒤쪽(척추 쪽)은 상대적으로 <strong>볼록</strong>한 형태</li>
+          <li>앞쪽(흉골 쪽)으로 갈수록 <strong>오목</strong>한 형태</li>
+          <li>전체적으로 위에서 아래로 기울어진 곡선 구조</li>
+        </ul>
+      </div>
+
+      <div class="subsection-title mt-16">기능</div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-title">심장 보호</div>
+          <div class="card-desc">흉곽이 심장을 외부 충격으로부터 보호</div>
+        </div>
+        <div class="card">
+          <div class="card-title">폐 보호</div>
+          <div class="card-desc">호흡을 위한 폐를 감싸 보호</div>
+        </div>
+        <div class="card">
+          <div class="card-title">대혈관 보호</div>
+          <div class="card-desc">대동맥, 상대정맥 등 주요 혈관 보호</div>
+        </div>
+        <div class="card">
+          <div class="card-title">호흡 기여</div>
+          <div class="card-desc">흉곽의 확장·수축으로 호흡 역학에 관여</div>
+        </div>
+      </div>
+
+      <div class="box box-key mt-10">
+        <div class="box-label">핵심 문장</div>
+        <p><strong>갈비뼈는 흉곽(thoracic cage)을 형성하여 심장, 폐, 대혈관 등 주요 장기를 보호한다.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 8 ===== -->
+  <section id="s8">
+    <div class="section-header">
+      <span class="sec-num">8</span>
+      <div>
+        <h2>근육 관계</h2>
+        <div class="eng">Muscle Relationships</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="desc">어깨 복합체와 관련된 주요 근육으로 <strong>대흉근</strong>과 <strong>삼각근</strong>을 먼저 이해해야 한다.</p>
+
+      <div class="muscle-block">
+        <h4>대흉근 / 큰가슴근 / Pectoralis major</h4>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>구분</th><th>내용</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>기시<br><span class="text-small">(Origin)</span></td>
+                <td>
+                  · 빗장뼈 (쇄골, Clavicle) — 쇄골 부분<br>
+                  · 복장뼈 (흉골, Sternum) — 흉골 부분<br>
+                  · 늑연골 (갈비연골, Costal cartilage) — 늑골 부분
+                </td>
+              </tr>
+              <tr>
+                <td>정지<br><span class="text-small">(Insertion)</span></td>
+                <td>위팔뼈 (상완골, Humerus) — 큰결절 능선(greater tubercle crest)</td>
+              </tr>
+              <tr>
+                <td>주요 기능</td>
+                <td>어깨 굽힘, 모음, 안쪽돌림</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="muscle-block mt-10">
+        <h4>삼각근 / 세모근 / Deltoid muscle</h4>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>구분</th><th>내용</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>위치</td>
+                <td>대흉근의 근위 전면(위쪽 전면) 및 어깨 외측에 위치</td>
+              </tr>
+              <tr>
+                <td>3부분</td>
+                <td>앞섬유 / 중간섬유 / 뒤섬유 (전부·중부·후부)</td>
+              </tr>
+              <tr>
+                <td>주요 기능</td>
+                <td>어깨 벌림(중간섬유), 굽힘(앞섬유), 폄(뒤섬유)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="box box-purple mt-10">
+        <div class="box-label">삼각흉근구 (Deltopectoral groove)</div>
+        <p>대흉근과 삼각근 사이에 형성되는 홈(groove). 이 공간에는 <strong>두렁정맥(cephalic vein)</strong>이 주행한다.</p>
+        <p class="mt-10" style="font-size:0.85rem;">촉진 시 두 근육 사이의 홈을 확인하면 해부학적 위치를 파악하는 데 도움이 된다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 9 ===== -->
+  <section id="s9">
+    <div class="section-header">
+      <span class="sec-num">9</span>
+      <div>
+        <h2>견갑골의 골학적 외형 (완전판)</h2>
+        <div class="eng">Osteological Features of Scapula</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="desc">견갑골(어깨뼈, Scapula)은 <strong>삼각형 모양의 편평한 뼈</strong>이며, 어깨의 움직임과 안정성에 매우 중요한 역할을 한다.</p>
+
+      <!-- 9-1 각 -->
+      <details open>
+        <summary>9-1. 견갑골의 각 (Angle)</summary>
+        <div class="details-body">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>신용어</th><th>구용어</th><th>영어</th><th>설명</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>위각</td>
+                  <td class="tag-old">상각</td>
+                  <td class="tag-eng">Superior angle</td>
+                  <td>견갑골의 위안쪽(내상방) 끝. 등세모근(승모근)이 부착</td>
+                </tr>
+                <tr>
+                  <td>아래각</td>
+                  <td class="tag-old">하각</td>
+                  <td class="tag-eng">Inferior angle</td>
+                  <td>견갑골의 가장 아래쪽 끝. 팔 거상 시 움직임을 관찰하는 촉진점</td>
+                </tr>
+                <tr>
+                  <td>가쪽각</td>
+                  <td class="tag-old">외측각</td>
+                  <td class="tag-eng">Lateral angle</td>
+                  <td>가쪽 끝. <strong>관절오목(glenoid cavity)</strong>이 위치하여 GH joint 형성</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="box box-key mt-10">
+            <div class="box-label">중요</div>
+            <p>가쪽각(Lateral angle)에는 <strong>관절오목(Glenoid cavity)</strong>이 있어 위팔뼈 머리(head of humerus)와 만나 <strong>오목위팔관절(GH joint)</strong>을 형성한다.</p>
+          </div>
+        </div>
+      </details>
+
+      <!-- 9-2 모서리 -->
+      <details open>
+        <summary>9-2. 견갑골의 모서리 (Border)</summary>
+        <div class="details-body">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>신용어</th><th>구용어</th><th>영어</th><th>설명</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>위모서리</td>
+                  <td class="tag-old">상연</td>
+                  <td class="tag-eng">Superior border</td>
+                  <td>가장 짧고 얇은 위쪽 경계. 위어깨뼈패임(suprascapular notch) 존재</td>
+                </tr>
+                <tr>
+                  <td>안쪽모서리</td>
+                  <td class="tag-old">내측연</td>
+                  <td class="tag-eng">Medial border</td>
+                  <td>척추 쪽 경계 (척추연). 가장 긴 모서리</td>
+                </tr>
+                <tr>
+                  <td>가쪽모서리</td>
+                  <td class="tag-old">외측연</td>
+                  <td class="tag-eng">Lateral border</td>
+                  <td>겨드랑이 쪽 경계 (액와연). 비교적 두꺼움</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <!-- 9-3 면 -->
+      <details open>
+        <summary>9-3. 견갑골의 면 (Fossa / Surface)</summary>
+        <div class="details-body">
+          <div class="fossa-wrap">
+            <div class="fossa-card front">
+              <div class="fc-title">앞면 (Anterior / Costal Surface)</div>
+              <ul>
+                <li><strong>어깨밑오목</strong> (견갑하와, Subscapular fossa)</li>
+                <li>어깨밑근(견갑하근, Subscapularis) 위치</li>
+                <li>갈비뼈 쪽을 향하는 오목한 면</li>
+              </ul>
+            </div>
+            <div class="fossa-card back">
+              <div class="fc-title">뒤면 (Posterior Surface)</div>
+              <ul>
+                <li><strong>극상오목</strong> (극상와, Supraspinous fossa) — 견갑극 위쪽</li>
+                <li>가시위근(극상근, Supraspinatus) 위치</li>
+                <li><strong>극하오목</strong> (극하와, Infraspinous fossa) — 견갑극 아래쪽</li>
+                <li>가시아래근(극하근, Infraspinatus) 위치</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="table-wrap mt-10">
+            <table>
+              <thead>
+                <tr><th>신용어</th><th>구용어</th><th>영어</th><th>위치</th><th>관련 근육</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>어깨밑오목</td>
+                  <td class="tag-old">견갑하와</td>
+                  <td class="tag-eng">Subscapular fossa</td>
+                  <td>앞면 (costal surface)</td>
+                  <td>어깨밑근 (subscapularis)</td>
+                </tr>
+                <tr>
+                  <td>극상오목</td>
+                  <td class="tag-old">극상와</td>
+                  <td class="tag-eng">Supraspinous fossa</td>
+                  <td>뒤면, 견갑극 위쪽</td>
+                  <td>가시위근 (supraspinatus)</td>
+                </tr>
+                <tr>
+                  <td>극하오목</td>
+                  <td class="tag-old">극하와</td>
+                  <td class="tag-eng">Infraspinous fossa</td>
+                  <td>뒤면, 견갑극 아래쪽</td>
+                  <td>가시아래근 (infraspinatus)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <!-- 9-4 돌기 -->
+      <details open>
+        <summary>9-4. 돌기(Process)와 주요 돌출 구조</summary>
+        <div class="details-body">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>신용어</th><th>구용어</th><th>영어</th><th>설명</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>견갑극</td>
+                  <td class="tag-old">견갑극</td>
+                  <td class="tag-eng">Spine of scapula</td>
+                  <td>견갑골 뒤면을 가로지르는 뚜렷한 능선. 뒤면을 극상오목과 극하오목으로 구분</td>
+                </tr>
+                <tr>
+                  <td>봉우리</td>
+                  <td class="tag-old">견봉</td>
+                  <td class="tag-eng">Acromion</td>
+                  <td>견갑극이 가쪽으로 이어져 형성. 빗장뼈와 만나 AC joint 형성. 어깨 가장 높은 돌출점</td>
+                </tr>
+                <tr>
+                  <td>부리돌기</td>
+                  <td class="tag-old">오훼돌기</td>
+                  <td class="tag-eng">Coracoid process</td>
+                  <td>앞쪽으로 돌출된 갈고리 모양. 여러 근육(오훼완근, 소흉근 등)과 인대의 부착점</td>
+                </tr>
+                <tr>
+                  <td>관절오목</td>
+                  <td class="tag-old">관절와</td>
+                  <td class="tag-eng">Glenoid cavity<br><span class="text-small">(glenoid fossa)</span></td>
+                  <td>가쪽각에 위치. 위팔뼈 머리와 만나 GH joint 형성. 관절순(glenoid labrum)이 깊이를 보완</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="box box-green mt-10">
+            <div class="box-label">견갑극 구조 이해</div>
+            <p>견갑극(Spine of scapula)은 뒤면을 가로지르다가 가쪽으로 이어져 <strong>봉우리(Acromion)</strong>가 된다.<br>
+            따라서 봉우리는 견갑극의 연장이다.</p>
+          </div>
+        </div>
+      </details>
+
+      <!-- 9-5 패임 -->
+      <details open>
+        <summary>9-5. 견갑패임 (Suprascapular Notch)</summary>
+        <div class="details-body">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>신용어</th><th>구용어</th><th>영어</th><th>설명</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>위어깨뼈패임</td>
+                  <td class="tag-old">견갑절흔 / 견갑패임</td>
+                  <td class="tag-eng">Suprascapular notch</td>
+                  <td>위모서리(superior border) 부근에 위치. <strong>위어깨뼈신경(suprascapular nerve)</strong>이 통과하는 통로. 임상적으로 신경 포착 증후군과 연관</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="box box-warn mt-10">
+            <div class="box-label">임상 주의</div>
+            <p>Suprascapular notch를 통해 <strong>견갑상신경(Suprascapular nerve)</strong>이 지나간다.
+            이 부위가 좁아지거나 손상되면 신경 포착이 발생하여 가시위근(극상근), 가시아래근(극하근)의 기능 저하가 나타날 수 있다.</p>
+          </div>
+        </div>
+      </details>
+
+      <!-- 9-6 핵심 정리 -->
+      <div class="mt-16">
+        <div class="subsection-title">9-6. 견갑골 핵심 정리</div>
+        <div class="mega-card">
+          <h3>견갑골(Scapula) 구조 요약</h3>
+          <ul>
+            <li><strong>3개의 각(angle):</strong> 위각(Superior), 아래각(Inferior), 가쪽각(Lateral)</li>
+            <li><strong>3개의 모서리(border):</strong> 위모서리(Superior), 안쪽(Medial), 가쪽(Lateral)</li>
+            <li><strong>오목(fossa):</strong> 어깨밑오목(앞), 극상오목(뒤 위), 극하오목(뒤 아래)</li>
+            <li><strong>돌기:</strong> 견갑극, 봉우리(견봉), 부리돌기(오훼돌기)</li>
+            <li><strong>관절오목:</strong> 가쪽각에 위치 → GH joint</li>
+            <li><strong>패임:</strong> 위어깨뼈패임(견갑패임) → 신경 통과</li>
+          </ul>
+        </div>
+        <div class="box box-exam mt-10">
+          <div class="box-label">암기 문장</div>
+          <p><strong>견갑골의 가쪽각(Lateral angle)에는 관절오목(Glenoid cavity)이 있어 위팔뼈와 만나 오목위팔관절(GH joint)을 형성한다.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 10 ===== -->
+  <section id="s10">
+    <div class="section-header">
+      <span class="sec-num">10</span>
+      <div>
+        <h2>촉진 포인트</h2>
+        <div class="eng">Palpation Points</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p class="desc">어깨 구조물은 일정한 순서에 따라 촉진하면 위치를 파악하기 쉽다.</p>
+
+      <div class="subsection-title">촉진 순서</div>
+      <div class="step-flow">
+        <div class="step-item">복장뼈<br><small>Sternum</small></div>
+        <div class="step-arrow">→</div>
+        <div class="step-item">빗장뼈<br><small>Clavicle</small></div>
+        <div class="step-arrow">→</div>
+        <div class="step-item">쇄골 외측단<br><small>Acromial end</small></div>
+        <div class="step-arrow">→</div>
+        <div class="step-item">봉우리빗장관절<br><small>AC joint</small></div>
+        <div class="step-arrow">→</div>
+        <div class="step-item">봉우리(견봉)<br><small>Acromion</small></div>
+      </div>
+
+      <div class="box box-green mt-10">
+        <div class="box-label">촉진 팁</div>
+        <ul>
+          <li>쇄골을 따라 <strong>가쪽(외측)으로 촉진</strong>하면 볼록한 부분을 지나 <strong>봉우리(견봉, Acromion)</strong>가 나타난다.</li>
+          <li>견갑골은 <strong>갈비뼈 위에서 움직이는 것</strong>이 중요하다. — ST joint의 핵심</li>
+          <li>어깨가슴관절(ST joint)은 실제 해부학적 관절이라기보다 <strong>기능적 관절</strong>이다.</li>
+          <li>봉우리(Acromion)는 어깨의 가장 높은 돌출 지점으로, 어깨뼈를 따라 외측-상방으로 촉진하면 찾을 수 있다.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 11 ===== -->
+  <section id="s11">
+    <div class="section-header">
+      <span class="sec-num">11</span>
+      <div>
+        <h2>최종 핵심 요약</h2>
+        <div class="eng">Final Summary</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="mega-card">
+        <h3>어깨 복합체 최종 핵심 카드</h3>
+        <ul>
+          <li>어깨 복합체(Shoulder Complex)는 <strong>여러 관절이 함께 작동</strong>하는 구조이다.</li>
+          <li>일반적으로 <strong>4개의 관절</strong>로 설명한다. (SC, AC, ST, GH)</li>
+          <li>주요 관절: <strong>SC joint, AC joint, ST joint, GH joint</strong></li>
+          <li>복장뼈(흉골)와 빗장뼈(쇄골)가 만나 <strong>복장빗장관절(SC joint)</strong>을 이룬다.</li>
+          <li>빗장뼈의 가쪽 끝(Acromial end) 다음에 <strong>봉우리(견봉, Acromion)</strong>가 위치한다.</li>
+          <li>견갑골은 <strong>갈비뼈 위에서 움직이며</strong> 어깨 기능에 중요하다. → ST joint</li>
+          <li>갈비뼈는 <strong>흉곽(thoracic cage)</strong>을 형성하여 심장, 폐, 대혈관 등 주요 장기를 보호한다.</li>
+          <li>복장뼈 = Manubrium + Body + Xiphoid process (3부분)</li>
+          <li>빗장뼈 = Sternal end + Shaft + Acromial end (3부분)</li>
+          <li>견갑골 = 3각 + 3모서리 + 여러 오목 + 견갑극/봉우리/부리돌기</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 12 ===== -->
+  <section id="s12">
+    <div class="section-header">
+      <span class="sec-num">12</span>
+      <div>
+        <h2>시험 대비 암기 포인트</h2>
+        <div class="eng">Exam Preparation Checklist</div>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <!-- 1) 4관절 -->
+      <div class="subsection">
+        <div class="subsection-title">1) 어깨 복합체 4관절</div>
+        <ul class="checklist">
+          <li><span><span class="ck-kr">복장빗장관절</span> <span class="ck-old">/ 흉쇄관절</span> <span class="ck-eng">/ Sternoclavicular Joint (SC joint)</span></span></li>
+          <li><span><span class="ck-kr">봉우리빗장관절</span> <span class="ck-old">/ 견봉쇄골관절</span> <span class="ck-eng">/ Acromioclavicular Joint (AC joint)</span></span></li>
+          <li><span><span class="ck-kr">어깨가슴관절</span> <span class="ck-old">/ 견갑흉곽관절</span> <span class="ck-eng">/ Scapulothoracic Joint (ST joint)</span></span></li>
+          <li><span><span class="ck-kr">오목위팔관절</span> <span class="ck-old">/ 견관절</span> <span class="ck-eng">/ Glenohumeral Joint (GH joint)</span></span></li>
+        </ul>
+      </div>
+
+      <!-- 2) 복장뼈 3부분 -->
+      <div class="subsection">
+        <div class="subsection-title">2) 복장뼈 3부분 (Sternum)</div>
+        <ul class="checklist">
+          <li><span><span class="ck-kr">복장뼈 자루</span> <span class="ck-old">/ 흉골병</span> <span class="ck-eng">/ Manubrium</span></span></li>
+          <li><span><span class="ck-kr">복장뼈 몸통</span> <span class="ck-old">/ 흉골체</span> <span class="ck-eng">/ Body</span></span></li>
+          <li><span><span class="ck-kr">칼돌기</span> <span class="ck-old">/ 검상돌기</span> <span class="ck-eng">/ Xiphoid process</span></span></li>
+        </ul>
+      </div>
+
+      <!-- 3) 빗장뼈 3부분 -->
+      <div class="subsection">
+        <div class="subsection-title">3) 빗장뼈 3부분 (Clavicle)</div>
+        <ul class="checklist">
+          <li><span><span class="ck-kr">복장끝</span> <span class="ck-old">/ 흉골끝</span> <span class="ck-eng">/ Sternal end</span></span></li>
+          <li><span><span class="ck-kr">몸통</span> <span class="ck-old">/ 체부</span> <span class="ck-eng">/ Shaft</span></span></li>
+          <li><span><span class="ck-kr">봉우리끝</span> <span class="ck-old">/ 견봉끝</span> <span class="ck-eng">/ Acromial end</span></span></li>
+        </ul>
+      </div>
+
+      <!-- 4) 견갑골 3각 -->
+      <div class="subsection">
+        <div class="subsection-title">4) 견갑골 3개의 각 (Scapula: Angles)</div>
+        <ul class="checklist">
+          <li><span><span class="ck-kr">위각</span> <span class="ck-old">/ 상각</span> <span class="ck-eng">/ Superior angle</span></span></li>
+          <li><span><span class="ck-kr">아래각</span> <span class="ck-old">/ 하각</span> <span class="ck-eng">/ Inferior angle</span></span></li>
+          <li><span><span class="ck-kr">가쪽각</span> <span class="ck-old">/ 외측각</span> <span class="ck-eng">/ Lateral angle — 관절오목(Glenoid cavity) 위치</span></span></li>
+        </ul>
+      </div>
+
+      <!-- 5) 견갑골 3모서리 -->
+      <div class="subsection">
+        <div class="subsection-title">5) 견갑골 3개의 모서리 (Scapula: Borders)</div>
+        <ul class="checklist">
+          <li><span><span class="ck-kr">위모서리</span> <span class="ck-old">/ 상연</span> <span class="ck-eng">/ Superior border — Suprascapular notch 포함</span></span></li>
+          <li><span><span class="ck-kr">안쪽모서리</span> <span class="ck-old">/ 내측연</span> <span class="ck-eng">/ Medial border — 척추 쪽</span></span></li>
+          <li><span><span class="ck-kr">가쪽모서리</span> <span class="ck-old">/ 외측연</span> <span class="ck-eng">/ Lateral border — 겨드랑이 쪽</span></span></li>
+        </ul>
+      </div>
+
+      <!-- 6) 견갑골 핵심 구조 -->
+      <div class="subsection">
+        <div class="subsection-title">6) 견갑골 핵심 구조 (Scapula: Key Structures)</div>
+        <ul class="checklist">
+          <li><span><span class="ck-kr">견갑극</span> <span class="ck-eng">/ Spine of scapula — 뒤면 횡주하는 능선</span></span></li>
+          <li><span><span class="ck-kr">봉우리 (견봉)</span> <span class="ck-eng">/ Acromion — 견갑극 가쪽 연장, AC joint 형성</span></span></li>
+          <li><span><span class="ck-kr">부리돌기 (오훼돌기)</span> <span class="ck-eng">/ Coracoid process — 앞쪽 갈고리형 돌기</span></span></li>
+          <li><span><span class="ck-kr">관절오목 (관절와)</span> <span class="ck-eng">/ Glenoid cavity — GH joint 형성</span></span></li>
+          <li><span><span class="ck-kr">극상오목 (극상와)</span> <span class="ck-eng">/ Supraspinous fossa — 가시위근 위치</span></span></li>
+          <li><span><span class="ck-kr">극하오목 (극하와)</span> <span class="ck-eng">/ Infraspinous fossa — 가시아래근 위치</span></span></li>
+          <li><span><span class="ck-kr">어깨밑오목 (견갑하와)</span> <span class="ck-eng">/ Subscapular fossa — 어깨밑근 위치 (앞면)</span></span></li>
+        </ul>
+      </div>
+
+      <!-- 최종 암기 박스 -->
+      <div class="box box-exam mt-16">
+        <div class="box-label">최종 시험 암기 문장 모음</div>
+        <ul>
+          <li><strong>SC joint</strong> = 어깨와 몸통을 연결하는 유일한 뼈 관절</li>
+          <li><strong>ST joint</strong> = 실제 해부학적 관절이 아닌 기능적 관절</li>
+          <li><strong>GH joint</strong> = 볼-소켓 관절, 가장 넓은 운동 범위</li>
+          <li><strong>Sternum</strong> = Manubrium + Body + Xiphoid process</li>
+          <li><strong>Clavicle</strong> = Sternal end + Shaft + Acromial end</li>
+          <li><strong>Scapula Lateral angle</strong> → Glenoid cavity → GH joint</li>
+          <li><strong>Spine of scapula</strong> 가쪽 연장 → Acromion → AC joint</li>
+          <li><strong>갈비뼈</strong> = 흉곽 형성 → 심장, 폐, 대혈관 보호</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+</div>
+
+<footer>
+  <p>어깨 복합체(Shoulder Complex) 해부학 정리 · 한국어 학습 노트</p>
+  <p style="margin-top:6px;opacity:0.7;">신용어 · 구용어 · 영어 통합 / 재활 · 운동학 · 해부학 시험 대비</p>
+</footer>
+
+</body>
+</html>
